@@ -2,7 +2,11 @@ import wikipediaapi
 from datetime import datetime
 
 def get_birthdays_for_date(month, day):
-    wiki = wikipediaapi.Wikipedia('en')
+    wiki = wikipediaapi.Wikipedia(
+    language='en',
+    user_agent='daily-birthdays-script/1.0 (https://github.com/srw3804/daily-birthdays)'
+)
+
     month_name = datetime(2023, month, day).strftime('%B')
     date_title = f"{month_name}_{day}"
     
